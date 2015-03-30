@@ -82,7 +82,7 @@ if (empty($_POST) === false) {
 <h1>Register Account</h1>
 <?php
 if (isset($_GET['success']) && empty($_GET['success'])) {
-	if ($config['mailserver']['register']) {
+	if ($config['mailserver']) {
 		?>
 		<h1>Email authentication required</h1>
 		<p>We have sent you an email with an activation link to your submitted email address.</p>
@@ -171,9 +171,8 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 			<li>
 				Do you agree to follow the server rules?<br>
 				<select name="selected">
-				  <option value="0">Umh...</option>
+				  <option value="0">No.</option>
 				  <option value="1">Yes.</option>
-				  <option value="2">No.</option>
 				</select>
 			</li>
 			<?php

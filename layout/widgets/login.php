@@ -4,7 +4,7 @@
 		<form action="login.php" method="post">
 		<ul id="login">
 			<li>
-				Username: <br>
+				Userame: <br>
 				<input type="text" name="username">
 			</li>
 			<li>

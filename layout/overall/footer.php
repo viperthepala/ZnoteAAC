@@ -1,19 +1,34 @@
-  <?php
-//data_dump($accQueriesData, false, "Done Queries");
-  ?>
-      </div>
-    </div>
-    <?php include 'layout/footer.php'; ?>
-  </div>
-  <!-- javascript at the bottom for fast page loading -->
-  <script type="text/javascript" src="layout/js/jquery.js"></script>
-  <script type="text/javascript" src="layout/js/jquery.easing-sooper.js"></script>
-  <script type="text/javascript" src="layout/js/jquery.sooperfish.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('ul.sf-menu').sooperfish();
-      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
-    });
-  </script>
-</body>
+											</div>
+										</div>
+									</div>
+									<div class="Border_1" style="background-image:url(layout/images/global/content/border-1.gif);"></div>
+									<div class="CornerWrapper-b">
+										<div class="Corner-bl" style="background-image:url(layout/images/global/content/corner-bl.gif);"></div>
+									</div>
+									<div class="CornerWrapper-b">
+										<div class="Corner-br" style="background-image:url(layout/images/global/content/corner-br.gif);"></div>
+									</div>
+								</div>
+								<div id="ThemeboxesColumn" >
+									<?php include 'layout/rightside.php'; ?>
+								</div>
+							</div>
+						</div>
+						<div id="Footer">
+							&copy; <?php echo $config['site_title'];?>.
+							<?php
+								$time = microtime();
+								$time = explode(' ', $time);
+								$time = $time[1] + $time[0];
+								$finish = $time;
+								$total_time = round(($finish - $start), 4);
+								echo 'Server date and clock is: '. getClock(time(), true) .' Page generated in '. $total_time .' seconds.';
+							?>
+							<br /> Layout by CipSoft GmbH. Engine: <a href="credits.php">Znote AAC</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
