@@ -1110,13 +1110,13 @@ function user_create_account($register_data, $maildata) {
 
 		$mailer = new Mail($maildata);
 
-		$title = "Please authenticate your account at $_SERVER[HTTP_HOST].";
+		$title = "This is an activation e-mail for $_SERVER[HTTP_HOST].";
 		
-		$body = "<h1>Please click on the following link to authenticate your account:</h1>";
-		$body .= "<p><a href='$thisurl'>$thisurl</a></p>";
-		$body .= "<p>Thank you for registering and enjoy your stay at $maildata[fromName].</p>";
-		$body .= "<hr><p>I am an automatic no-reply e-mail. Any emails sent back to me will be ignored.</p>";
-		
+		$body = "Please click on the following link to authenticate your account: ";
+		$body .= "$thisurl.\r";
+		$body .= "Thank you for registering and enjoy your stay at $maildata[fromName].\r\r";
+		$body .= "This is an automatic generated e-mail.\r";
+		$body .= "Any emails sent to this e-mail will be ignored.";
 		$mailer->sendMail($register_data['email'], $title, $body, $register_data['name']);
 	}
 }
